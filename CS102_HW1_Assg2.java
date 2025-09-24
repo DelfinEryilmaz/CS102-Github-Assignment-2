@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Random;
 
 public class CS102_HW1_Assg2 {
     public static void main(String[] args) {
-        int arraySize = 0;
         Scanner in = new Scanner(System.in);
+        int arraySize = 0;
         
         // Getting user input to determine array size
         System.out.print("Please enter an integer to determine the array size: ");
@@ -14,11 +15,12 @@ public class CS102_HW1_Assg2 {
             System.out.println("Invalid input. Please enter an integer.");
         }
         
+        // Creating the array and filling it
         int[] arr = new int[arraySize];
         fillArray(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
+        
+        // Printing the array
+        System.out.println(Arrays.toString(arr));
     }
     
     // Filling array with random numbers
