@@ -57,9 +57,9 @@ public class CS102_HW1_Assg2 {
 
             // finding the average of the array and the difference of each element
             else if (option == 3 ){
-                int[] differencesFromAverage;
-                differencesFromAverage = difference(arr);
-                //System.out.println("The difference array is : " + Arrays.toString(differencesFromAverage[]));
+                double[] avgDifference;
+                avgDifference = differencesFromAverage(arr);
+                System.out.println("The difference array is : " + Arrays.toString(avgDifference));
             }
 
             // finding the sum of the elements in odd and even indexes
@@ -123,4 +123,21 @@ public class CS102_HW1_Assg2 {
     }
 
 
+    //Displaying the difference of the elements in an array
+   public static double[] differencesFromAverage(int[] arr) {
+
+    //finding the avg, the default value set as 0
+    double avg = 0;
+    double [] avgDifference = new double[arr.length];
+    for (int num : arr) {
+        avg += num;
+    }
+    avg = avg / arr.length;
+
+    for (int i = 0; i < arr.length; i++) {
+        avgDifference[i] = arr[i] - avg; 
+    }
+
+    return avgDifference;
+    }
 }
