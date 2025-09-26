@@ -52,7 +52,13 @@ public class CS102_HW1_Assg2 {
             {
                 int maximum;
                 maximum = maximum(arr);
-                System.out.println("The maximum element of the array is: " + maximum);
+                if ( maximum != -1){
+                    System.out.println("The maximum element of the array is: " + maximum);
+                }
+                else {
+                    System.out.println("Array is empty, can't determine maximum.");
+                }
+
             }
 
             // finding the minimum of the array
@@ -60,7 +66,12 @@ public class CS102_HW1_Assg2 {
             {
                 int minimum;
                 minimum = minimum(arr);
-                System.out.println("The minimum element of the array is: " + minimum);
+                if ( minimum != -1){
+                    System.out.println("The minimum element of the array is: " + minimum);
+                }
+                else {
+                    System.out.println("Array is empty, can't determine minimum.");
+                }
             }
 
             // finding the average of the array and the difference of each element
@@ -93,28 +104,39 @@ public class CS102_HW1_Assg2 {
     
     private static int minimum(int[] arr)//Finding the minimum of the array 
     {
-        int min = arr[0];
-            for (int i = 1; i < arr.length; i++) 
-        {
-            if (arr[i] < min) 
-        {
-            min = arr[i];
+        if (arr.length == 0){
+            return -1;
         }
-    }
-        return min;
+        else{
+            int min = arr[0];
+            for (int i = 1; i < arr.length; i++) 
+            {
+                if (arr[i] < min) 
+                {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
     }
 
     private static int maximum(int[] arr)//Finding the maximum of the array 
     {
-        ;int max = arr[0];
-            for (int i = 1; i < arr.length; i++) 
-        {
-            if (arr[i] > max) 
-        {
-            max = arr[i];
+        if (arr.length == 0){
+            return -1;
         }
-    }
+        else{
+            int max = arr[0];
+            for (int i = 1; i < arr.length; i++) 
+            {
+                if (arr[i] > max) 
+                {
+                    max = arr[i];
+                }
+            }
             return max;
+        }
     }
 
     // Filling array with random numbers
